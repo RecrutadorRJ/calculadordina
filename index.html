@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/sw.js').then(function(registration) {
+            console.log('Service Worker registrado com sucesso:', registration.scope);
+          }, function(err) {
+            console.log('Falha ao registrar o Service Worker:', err);
+          });
+        }
+      </script>
+      
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora do Dinamômetro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculo Dinamômetro</h1>
+        <div class="tabs">
+            <button class="tab-button" onclick="openTab(event, 'absorção')">Absorção</button>
+            <button class="tab-button" onclick="openTab(event, 'gramatura')">Gramatura</button>
+            <button class="tab-button" onclick="openTab(event, 'espessura')">Espessura</button>
+        </div>
+
+        <!-- Aba de Absorção -->
+        <div id="absorção" class="tab-content">
+            <h2>Cálculo de Absorção %</h2>
+            <form id="absorção-form">
+                <div class="input-group">
+                    <label>Tecido 1 (seco / molhado):</label>
+                    <input type="number" id="seco1" placeholder="Seco" required>
+                    <input type="number" id="molhado1" placeholder="Molhado" required>
+                </div>
+                <div class="input-group">
+                    <label>Tecido 2 (seco / molhado):</label>
+                    <input type="number" id="seco2" placeholder="Seco" required>
+                    <input type="number" id="molhado2" placeholder="Molhado" required>
+                </div>
+                <div class="input-group">
+                    <label>Tecido 3 (seco / molhado):</label>
+                    <input type="number" id="seco3" placeholder="Seco" required>
+                    <input type="number" id="molhado3" placeholder="Molhado" required>
+                </div>
+                <div class="input-group">
+                    <label>Tecido 4 (seco / molhado):</label>
+                    <input type="number" id="seco4" placeholder="Seco" required>
+                    <input type="number" id="molhado4" placeholder="Molhado" required>
+                </div>
+                <button type="button" onclick="calcularAbsorção()">Calcular Absorção Média</button>
+                <p id="resultado-absorção"></p>
+            </form>
+        </div>
+
+        <!-- Aba de Gramatura -->
+        <div id="gramatura" class="tab-content" style="display:none;">
+            <h2>Cálculo de Gramatura</h2>
+            <form id="gramatura-form">
+                <div class="input-group">
+                    <label>Gramatura (g/m²):</label>
+                    <input type="number" id="pano1" placeholder="Pano 1" required>
+                    <input type="number" id="pano2" placeholder="Pano 2" required>
+                    <input type="number" id="pano3" placeholder="Pano 3" required>
+                    <input type="number" id="pano4" placeholder="Pano 4" required>
+                    <input type="number" id="pano5" placeholder="Pano 5" required>
+                </div>
+                <button type="button" onclick="calcularGramatura()">Calcular Média Gramatura</button>
+                <p id="resultado-gramatura"></p>
+            </form>
+        </div>
+
+        <!-- Aba de Espessura -->
+        <div id="espessura" class="tab-content" style="display:none;">
+            <h2>Cálculo de Espessura</h2>
+            <form id="espessura-form">
+                <div class="input-group">
+                    <label>Medida dos Panos (mm):</label>
+                    <input type="number" id="espessura1" placeholder="Pano 1" required>
+                    <input type="number" id="espessura2" placeholder="Pano 2" required>
+                    <input type="number" id="espessura3" placeholder="Pano 3" required>
+                    <input type="number" id="espessura4" placeholder="Pano 4" required>
+                    <input type="number" id="espessura5" placeholder="Pano 5" required>
+                </div>
+                <button type="button" onclick="calcularEspessura()">Calcular Média Espessura</button>
+                <p id="resultado-espessura"></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

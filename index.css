@@ -1,0 +1,148 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+.header {
+    background-color: #444;
+    color: white;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header__logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.header__nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.header__nav-list {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+.header__nav-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.header__search {
+    display: flex;
+    align-items: center;
+}
+
+.header__search-input {
+    padding: 0.5rem;
+    border-radius: 4px 0 0 4px;
+    border: none;
+}
+
+.header__search-button {
+    padding: 0.5rem;
+    border-radius: 0 4px 4px 0;
+    border: none;
+    background-color: white;
+    color: #444;
+    cursor: pointer;
+}
+
+/* Seção Principal */
+.main {
+    padding: 2rem 1rem;
+}
+
+.carousel {
+    margin-bottom: 2rem;
+}
+
+.carousel__container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+}
+
+.carousel__item {
+    flex: 0 0 auto;
+    width: 300px;
+    height: 200px;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel__item img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.popular, .recent-updates {
+    margin-bottom: 2rem;
+}
+
+.popular__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.popular__item, .recent-updates__item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
+}
+
+.popular__item img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0.5rem;
+}
+
+.footer {
+    background-color: #444;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer__social a {
+    color: white;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer__social a:hover {
+    color: #4CAF50;
+}
